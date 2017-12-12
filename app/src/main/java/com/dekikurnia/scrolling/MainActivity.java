@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         //set dummy data
         for (int i = 0; i < 10; i++) {
             Contact contact = new Contact();
-            contact.setPhone(phoneNumberGenerating());
-            contact.setEmail("DevExchanges" + i + "@gmail.com");
+            contact.setPhone("085710830260");
+            contact.setEmail("dekikurnia" + i + "@gmail.com");
             contacts.add(contact);
         }
 
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
                             int end = index + 10;
                             for (int i = index; i < end; i++) {
                                 Contact contact = new Contact();
-                                contact.setPhone(phoneNumberGenerating());
-                                contact.setEmail("DevExchanges" + i + "@gmail.com");
+                                contact.setPhone("085710830260");
+                                contact.setEmail("dekikurnia" + i + "@gmail.com");
                                 contacts.add(contact);
                             }
                             contactAdapter.notifyDataSetChanged();
@@ -99,11 +99,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private String phoneNumberGenerating() {
-        int low = 100000000;
-        int high = 999999999;
-        int randomNumber = random.nextInt(high - low) + low;
-
-        return "0" + randomNumber;
-    }
 }
