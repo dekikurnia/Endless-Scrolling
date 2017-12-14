@@ -30,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
         contacts = new ArrayList<>();
         random = new Random();
 
-        //set dummy data
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             Contact contact = new Contact();
             contact.setPhone("085710830260");
             contact.setEmail("dekikurnia" + i + "@gmail.com");
@@ -55,8 +54,7 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             contacts.remove(contacts.size() - 1);
                             contactAdapter.notifyItemRemoved(contacts.size());
-
-                            //Generating more data
+                            
                             int index = contacts.size();
                             int end = index + 10;
                             for (int i = index; i < end; i++) {
@@ -68,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                             contactAdapter.notifyDataSetChanged();
                             contactAdapter.setLoaded();
                         }
-                    }, 3000);
+                    }, 5000);
                 } else {
                     Toast.makeText(MainActivity.this, "Loading data completed", Toast.LENGTH_SHORT).show();
                 }
